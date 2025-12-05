@@ -1,24 +1,25 @@
-# 以下以一个构建vue项目的yml文件为例子
-name: CI
- 
+name: GitHub Actions Build and Deploy Demo
 on:
-    push:
-        branches:
-            - main # 这里只配置了main分支，所以只有推送main分支才会触发以下任务
+  push:
+    branches:
+      - main
 jobs:
-    build-and-deploy:
-        runs-on: ubuntu-latest
-        steps:
-            - uses: actions/checkout@v3
-            - name: Use Node.js
-              uses: actions/setup-node@v3
-              with:
-                  node-version: "14.x"
-            - run: node -v
-            - run: npm install
-            - run: npm run build
-            - name: Deploy # 部署
-              uses: JamesIves/github-pages-deploy-action@v4.3.3
-              with:
-                  branch: gh-pages # 部署后提交到那个分支
-                  folder: dist # 这里填打包好的目录名称
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout 🛎️
+        uses: actions/checkout@v2.3.1 # If you're using actions/checkout@v2 you must set persist-credentials to false in most cases for the deployment to work correctly.
+        with:
+          persist-credentials: false
+
+      - name: Install and Build 🔧 # This example project is built using npm and outputs the result to the 'build' folder. Replace with the commands required to build your project, or remove this step entirely if your site is pre-built.
+        run: |
+          npm install
+          npm run build
+      - name: Deploy 🚀
+        uses: JamesIves/github-pages-deploy-action@3.6.2
+        with:
+          ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }} #secrets.ACCESS_TOKEN是项目配置的密钥
+          BRANCH: gh-pages # The branch the action should deploy to.
+          FOLDER: dist # The folder the action should deploy.
+          CLEAN: true # Automatically remove deleted files from the deploy branch
