@@ -26,4 +26,12 @@ jobs:
     - run: npm ci
     - run: npm install
     - run: npm run build --if-present
+    - name: Deploy 🚀
+        uses: JamesIves/github-pages-deploy-action@v4
+        if: github.ref == 'refs/heads/main'
+        with:
+          token: ${{ secrets.ACCESS_TOKEN }}
+          branch: gh-pages
+          folder: dist
+          clean: true
 
