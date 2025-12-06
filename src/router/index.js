@@ -1,5 +1,4 @@
 import {createRouter, createWebHashHistory, createWebHistory, onBeforeRouteUpdate} from 'vue-router'
-import HomeView from '../views/HomeView.vue'
 
 const router = createRouter({
   history: createWebHashHistory(import.meta.env.BASE_URL),
@@ -10,7 +9,7 @@ const router = createRouter({
       meta: {
         title: '工具'
       },
-      component: HomeView,
+      component: () => import('../views/HomeView.vue'),
     },
     {
       path: '/pdf',
