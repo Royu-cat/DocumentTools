@@ -61,6 +61,7 @@ const activeTab = ref('home')
 // 应用数据
 const apps = reactive([
   { id: 1, name: 'PDF水印工具', icon: 'newspaper-o', color: '#1989fa', path: "/pdf" },
+  { id: 2, name: '图片文字工具', icon: 'photo-o', color: '#07c160', path: "/image_tool" },
 /*  { id: 2, name: '相册', icon: 'photo-o', color: '#07c160' },
   { id: 3, name: '音乐', icon: 'music-o', color: '#ff976a' },
   { id: 4, name: '视频', icon: 'video-o', color: '#ee0a24' },

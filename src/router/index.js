@@ -18,6 +18,14 @@ const router = createRouter({
         title: 'PDF工具'
       },
       component: () => import('../views/PDFTool.vue'),
+    },,
+    {
+      path: '/image_tool',
+      name: 'image-tool',
+      meta: {
+        title: 'Image工具'
+      },
+      component: () => import('../views/ImageTool.vue'),
     },
   ],
 });

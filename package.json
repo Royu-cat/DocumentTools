@@ -12,16 +12,23 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-free": "^7.2.0",
+    "@fortawesome/fontawesome-svg-core": "^7.2.0",
+    "@fortawesome/free-solid-svg-icons": "^7.2.0",
     "@pdfme/pdf-lib": "^5.5.7",
+    "@tailwindcss/vite": "^4.2.1",
     "file-saver": "^2.0.5",
+    "pdfjs-dist": "^2.6.347",
     "pinia": "^3.0.4",
     "vant": "^4.9.21",
     "vue": "^3.5.25",
-    "vue-router": "^4.6.3",
-    "pdfjs-dist": "^2.6.347"
+    "vue-router": "^4.6.3"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^6.0.2",
+    "autoprefixer": "^10.4.27",
+    "postcss": "^8.5.8",
+    "tailwindcss": "^4.2.1",
     "vite": "^7.2.4",
     "vite-plugin-vue-devtools": "^8.0.5"
   }
